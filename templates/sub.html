@@ -3,18 +3,28 @@
     <link rel="stylesheet" href="{{ url_for('static', filename='sub.css') }}">
 {% endblock %}
 {% block main %}
-<form action="/subtraction" method="post">
+<form action="/subtraction" id="substractionform" method="post">
     
 
+    <h1>Subtraction</h1>
     <div class="container">
-        <h1>Subtraction</h1>
+        
+        
         <p><input type="number" name="num1" placeholder="Enter 1st number"></p>
+        <span id="minus"><h2>-</h2></span>
         <p><input type="number" name="num2" placeholder="Enter 2nd number"></p>
-        <p class="result-label">Result:</p>  
-        <p class="result">{{result}} </p>
+         
+        
         <br>
+        
+    </div>
+
+    <div class="btn-container">
         <button type="submit">SUBTRACT</button>
     </div>
+
+    <p class="result-label">Result: {{result}}</p> 
+    
 </form>
 
 

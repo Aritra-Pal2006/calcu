@@ -1,7 +1,7 @@
 {% extends "index.html" %}
 
 {% block main %}
-<form action="">
+<form action="/addition" method="post">
     <!-- <h1>Addition</h1> -->
     <!-- background-color: ; -->
     <style>
@@ -9,13 +9,16 @@
           background-color: lightblue;
         }
         </style>
-    <h1 style="background-color:;">Addition</h1>
+    <h1 >Addition</h1>
     <!-- p.dashed {border-style: dashed;} -->
-    <p><input type="number" name="number" placeholder="Enter 1st no."></p>
-    <p><input type="number" name="number" placeholder="Enter 2nd no."></p>
-    <p>Result:-<input type="number" name="number"></p>
+     
+      <p><input type="number" name="num1" placeholder="Enter 1st no."></p>
+    <p><input type="number" name="num2" placeholder="Enter 2nd no."></p>
+    <p>Result: {{result}} </p>
     <br>
-    <input type="submit" value="ADD">
+    <button type="submit">ADD</button>
 
+</form>
+    
     
 {% endblock %}

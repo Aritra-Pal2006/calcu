@@ -1,66 +1,17 @@
-{% extends index.html % }
+{% extends "index.html" %}
+{% block extra_css %}
+    <link rel="stylesheet" href="{{ url_for('static', filename='sub.css') }}">
+{% endblock %}
 {% block main %}
-<form action="/substraction" method="post">
-    <style>
-        body {
-            background-color: rgb(10, 2, 24);
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            margin: 0;
-        }
-        .container {
-            text-align: center;
-            background: rgb(212, 150, 150);
-            padding: 10px;
-            border-radius: 20px;
-            box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.1);
-        }
-        h1 {
-            font-weight: bold;
-            font-style: italic;
-            font-family: "Times New Roman", Times, serif;
-        }
-        input {
-            padding: 1.7px;
-            margin: 5px;
-            width: 80%;
-            border: 3px solid rgb(87, 37, 37); /* Thick border */
-            font-size: 16px;
-        }
-        button {
-            background-color: rgb(114, 10, 41);
-            color: rgb(190, 176, 176);
-            border: 20;
-            cursor: pointer;
-            padding: 10px;
-            width: 80%;
-            font-size: 12px;
-            font-weight: bold;
-            border: 3px solid rgb(48, 4, 4); /* Thick border */
-        }
-        button:hover {
-            background-color: rgb(46, 2, 13);
-        }
-        .result-label {
-            font-family: "Courier New", Courier, monospace; /* Different font */
-            font-weight: bold;
-            font-size: 14px;
-        }
-        .result {
-            font-family: "Times New Roman", Times, serif;
-            font-weight: bold;
-            font-size: 13px;
-        }
-    </style>
+<form action="/subtraction" method="post">
+
 
     <div class="container">
         <h1>Subtraction</h1>
         <p><input type="number" name="num1" placeholder="Enter 1st number"></p>
         <p><input type="number" name="num2" placeholder="Enter 2nd number"></p>
         <p class="result-label">Result:</p>  
-        <p class="result"></p>
+        <p class="result">{{result}} </p>
         <br>
         <button type="submit">SUBTRACT</button>
     </div>

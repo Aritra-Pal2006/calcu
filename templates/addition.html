@@ -1,14 +1,16 @@
 {% extends "index.html" %}
 
+{% block extra_css %}
+    <link rel="stylesheet" href="{{ url_for('static', filename='addition.css') }}">
+{% endblock %}
+
+
 {% block main %}
-<form action="/addition" method="post">
+<form id="additionForm" action="/addition" method="post">
     <!-- <h1>Addition</h1> -->
     <!-- background-color: ; -->
-    <style>
-        body {
-          background-color: lightblue;
-        }
-        </style>
+     
+    
     <h1 >Addition</h1>
     <!-- p.dashed {border-style: dashed;} -->
      

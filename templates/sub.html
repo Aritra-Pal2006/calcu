@@ -1,4 +1,7 @@
-{% extends index.html % }
+{% extends "index.html" %}
+{% block extra_css %}
+    <link rel="stylesheet" href="{{ url_for('static', filename='sub.css') }}">
+{% endblock %}
 {% block main %}
 <form action="/substraction:" method="post">
     <style>
@@ -60,7 +63,7 @@
         <p><input type="number" name="num1" placeholder="Enter 1st number"></p>
         <p><input type="number" name="num2" placeholder="Enter 2nd number"></p>
         <p class="result-label">Result:</p>  
-        <p class="result"></p>
+        <p class="result">{{result}} </p>
         <br>
         <button type="submit">SUBTRACT</button>
     </div>
